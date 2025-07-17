@@ -1,65 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Ruby Archer</title>
-  <style>
-    /* reset browser defaults */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    body {
-      background-color: #f5f0e6; /* light beige—tweak if you need an exact match */
-      color: #222;
-      font-family: Arial, sans-serif;
-      height: 100vh;
-      display: flex;
-      align-items: center;              /* vertical center */
-      justify-content: center;          /* horizontal center */
-    }
-
-    .menu {
-      width: 100%;
-      max-width: 800px;     /* same width as your slide content */
-      padding: 0 20px;       /* give it a little breathing room */
-    }
-
-    .menu h1 {
-      font-size: 24px;       /* “Ruby Archer” size */
-      font-weight: normal;
-      margin-bottom: 60px;   /* space down to the links */
-    }
-
-    .menu ul {
-      list-style: none;
-    }
-
-    .menu li {
-      margin-bottom: 30px;  /* vertical gap between items */
-    }
-
-    .menu a {
-      text-decoration: none;
-      color: inherit;
-      font-size: 64px;      /* big link text—adjust up/down to taste */
-      font-weight: normal;
-      line-height: 1.1;
-    }
-
-    .menu a:hover {
-      opacity: 0.7;
-    }
-  </style>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <nav class="menu">
-    <h1>Ruby Archer</h1>
-    <ul>
-      <li><a href="paintings.html">Paintings</a></li>
-      <li><a href="exhibitions.html">Exhibitions</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a href="info.html">Info</a></li>
-    </ul>
+  <nav class="menu container">
+    <span class="logo">Ruby Archer</span>
   </nav>
+
+  <main class="container">
+    <ul style="list-style:none; margin-top:100px;">
+      <li style="margin-bottom:30px;">
+        <a href="paintings.html" style="text-decoration:none; color:var(--text); font-size:64px;">Paintings</a>
+      </li>
+      <li style="margin-bottom:30px;">
+        <a href="exhibitions.html" style="text-decoration:none; color:var(--text); font-size:64px;">Exhibitions</a>
+      </li>
+      <li style="margin-bottom:30px;">
+        <a href="contact.html" style="text-decoration:none; color:var(--text); font-size:64px;">Contact</a>
+      </li>
+      <li>
+        <a href="about.html" style="text-decoration:none; color:var(--text); font-size:64px;">Info</a>
+      </li>
+    </ul>
+  </main>
 </body>
 </html>
