@@ -1,45 +1,133 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Ruby Archer</title>
-  <link rel="stylesheet" href="css/landing.css">
-</head>
-<body>
-  <!-- SITE HEADER -->
-  <header class="site-header container">
-    <a href="index.html" class="logo">Ruby Archer</a>
-  </header>
+/* ───────────────────────────────────────────────── */
+/* VARIABLES & RESET                              */
+/* ───────────────────────────────────────────────── */
+:root {
+  --bg:      #fff;
+  --text:    #000;
+  --gutter:  20px;
+  --maxW:    800px;   /* container width */
+}
 
-  <!-- OFF-SCREEN BURGER MENU -->
-  <aside class="off-screen-menu">
-    <ul>
-      <li><a href="https://instagram.com/rubyarcher" target="_blank">Instagram</a></li>
-      <li><a href="#">Other Portfolios</a></li>
-      <li><a href="#">Example</a></li>
-    </ul>
-  </aside>
+* {
+  margin:  0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  <!-- HAMBURGER TOGGLE -->
-  <nav class="menu-nav">
-    <div class="ham-menu" aria-label="Toggle menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-  </nav>
+/* ───────────────────────────────────────────────── */
+/* BASE LAYOUT                                    */
+/* ───────────────────────────────────────────────── */
+/* You’d forgotten to define .container, so nothing
+   was ever centered or constrained. */
+.container {
+  max-width:     var(--maxW);
+  margin:        0 auto;
+  padding:       0 var(--gutter);
+  width:         100%;
+}
 
-  <!-- MAIN NAVIGATION -->
-  <main class="container">
-    <ul class="landing-menu">
-      <li><a href="paintings.html">Paintings</a></li>
-      <li><a href="exhibitions.html">Exhibitions</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a href="about.html">Info</a></li>
-    </ul>
-  </main>
+body {
+  background:    var(--bg);
+  color:         var(--text);
+  font-family:   Helvetica, sans-serif;
+  min-height:    100vh;
+  display:       flex;
+  justify-content: flex-start; /* left-align */
+  align-items:     center;      /* vertically center */
+}
 
-  <script src="js/script.js"></script>
-</body>
-</html>
+/* ───────────────────────────────────────────────── */
+/* HEADER / LOGO                                  */
+/* ───────────────────────────────────────────────── */
+/* Simplify selector: you only need .header-logo */
+header.site-header {
+  position:      absolute;
+  top:           var(--gutter);
+  left:          var(--gutter);
+}
+.site-header .logo {
+  font-size:     32px;
+  color:         var(--text);
+  text-decoration: none;
+}
+
+/* ───────────────────────────────────────────────── */
+/* HAMBURGER TOGGLE                               */
+/* ───────────────────────────────────────────────── */
+/* Fixed: you were giving each span only 4px width
+   & never closed --gutter so none of this ever ran. */
+nav.menu-nav {
+  position:      absolute;
+  top:           var(--gutter);
+  right:         var(--gutter);
+  z-index:       999;
+}
+.ham-menu {
+  width:         30px;
+  display:       flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap:           6px;
+  cursor:        pointer;
+}
+.ham-menu span {
+  display:       block;
+  width:         100%;
+  height:        4px;
+  background:    var(--text);
+  border-radius: 2px;
+  transition:    transform .3s ease, opacity .3s ease;
+}
+
+/* ───────────────────────────────────────────────── */
+/* OFF-SCREEN MENU                                 */
+/* ───────────────────────────────────────────────── */
+/* Merged list-style into the parent, tightened
+   up right offset, and scoped the UL reset. */
+.off-screen-menu {
+  position:      fixed;
+  top:           0;
+  right:         -450px;  /* hide offscreen */
+  width:         450px;
+  height:        100%;
+  background:    var(--bg);
+  display:       flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:   center;
+  text-align:    center;
+  font-size:     2rem;
+  transition:    right .3s ease;
+}
+.off-screen-menu ul {
+  list-style: none;
+  margin:     0;
+  padding:    0;
+}
+.off-screen-menu.active {
+  right: 0;
+}
+
+/* ───────────────────────────────────────────────── */
+/* LANDING NAV LIST                               */
+/* ───────────────────────────────────────────────── */
+/* Cleaned up stray margin/padding, matched your
+   HTML class exactly, and removed the incorrect
+   line-height:80% (it was collapsing your text). */
+.landing-menu {
+  list-style:    none;
+  display:       flex;
+  flex-direction: column;
+  justify-content: center;
+  width:         532px;
+  margin:        140px 0 0 0;  /* space down from header */
+  padding:       0;
+  gap:           30px;
+}
+.landing-menu li a {
+  text-decoration: none;
+  color:           var(--text);
+  font-size:       48px;
+  line-height:     150%;
+  display:         block;
+}
