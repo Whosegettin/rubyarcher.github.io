@@ -16,23 +16,21 @@ body {
   padding-left: var(--gutter);
 }
 
-main ul {
-   list-style: none;
+.landing-menu {
+  list-style: none;
   display: flex;
   flex-direction: column;
   justify-content: center;
   width: 532px;
-  flex-shrink: 0;
-  margin: 0 0 0 0;   /* no auto centering on the right */
+  margin: 0;
   padding: 0;
-  gap: 30px;         /* vertical gap between items */
+  gap: 30px;
 }
 
-main ul li a {
+.landing-menu li a {
   text-decoration: none;
   color: var(--text);
   font-size: 48px;
-  line-height: 80%;
-  margin-bottom: 0px;
+  line-height: 150%;   /* or 80% if you prefer tighter */
   display: block;
 }
