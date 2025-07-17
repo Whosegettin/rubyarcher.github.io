@@ -2,43 +2,64 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Ruby Archer – Home</title>
-  <link rel="stylesheet" href="css/style.css">
-  <script src="js/script.js" defer></script>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Ruby Archer</title>
+  <style>
+    /* reset browser defaults */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background-color: #f5f0e6; /* light beige—tweak if you need an exact match */
+      color: #222;
+      font-family: Arial, sans-serif;
+      height: 100vh;
+      display: flex;
+      align-items: center;              /* vertical center */
+      justify-content: center;          /* horizontal center */
+    }
+
+    .menu {
+      width: 100%;
+      max-width: 800px;     /* same width as your slide content */
+      padding: 0 20px;       /* give it a little breathing room */
+    }
+
+    .menu h1 {
+      font-size: 24px;       /* “Ruby Archer” size */
+      font-weight: normal;
+      margin-bottom: 60px;   /* space down to the links */
+    }
+
+    .menu ul {
+      list-style: none;
+    }
+
+    .menu li {
+      margin-bottom: 30px;  /* vertical gap between items */
+    }
+
+    .menu a {
+      text-decoration: none;
+      color: inherit;
+      font-size: 64px;      /* big link text—adjust up/down to taste */
+      font-weight: normal;
+      line-height: 1.1;
+    }
+
+    .menu a:hover {
+      opacity: 0.7;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <h1 class="logo">Ruby Archer</h1>
-    <button class="nav-toggle" aria-label="Open menu">&#9776;</button>
-    <nav id="main-nav">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="paintings.html">Paintings</a></li>
-        <li><a href="exhibitions.html">Exhibitions</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="about.html">About</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <main>
-    <section class="hero">
-      <h2>Welcome to Ruby Archer’s Art Portfolio</h2>
-      <p>Exploring vivid landscapes and emotional portraits. Browse paintings, learn about exhibitions, or get in touch.</p>
-    </section>
-
-    <section class="social-links">
-      <h3>Follow Ruby</h3>
-      <ul>
-        <li><a href="#">Instagram</a></li>
-        <li><a href="#">Art Portfolio</a></li>
-      </ul>
-    </section>
-  </main>
-
-  <footer>
-    <p>&copy; 2025 Ruby Archer</p>
-  </footer>
+  <nav class="menu">
+    <h1>Ruby Archer</h1>
+    <ul>
+      <li><a href="paintings.html">Paintings</a></li>
+      <li><a href="exhibitions.html">Exhibitions</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="info.html">Info</a></li>
+    </ul>
+  </nav>
 </body>
 </html>
