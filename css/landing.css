@@ -23,6 +23,16 @@ body {
   font-size: 32px; 
 }
 
+/* keep Ruby Archer black (or whatever --text is) in all states */
+.menu .logo,
+.menu .logo:link,
+.menu .logo:visited,
+.menu .logo:hover,
+.menu .logo:active {
+  color: var(--text) !important;
+  text-decoration: none;
+}
+
 .menu.container {
   position: absolute;
   top: 0;
