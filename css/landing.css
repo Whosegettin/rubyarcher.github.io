@@ -35,6 +35,12 @@ body {
   transition: .3s ease;
 }
 
+.off-screen-menu ul {
+   list-style: none;    /* ← turn off bullets */
+  margin: 0;
+  padding: 0;
+}
+
 .off-screen-menu.active {
   right: 0;
 }
