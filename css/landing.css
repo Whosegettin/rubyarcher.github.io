@@ -1,136 +1,45 @@
-/* landing.css */
-:root {
-  --bg: #ffffff;
-  --text: #000; 
-  --gutter: 20px;
-}
-* { margin:0; padding:0; box-sizing:border-box; }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Ruby Archer</title>
+  <link rel="stylesheet" href="css/landing.css">
+</head>
+<body>
+  <!-- SITE HEADER -->
+  <header class="site-header container">
+    <a href="index.html" class="logo">Ruby Archer</a>
+  </header>
 
-body {
-  background: var(--bg);
-  font-family: 'Helvetica', sans-serif;
-  color: var(--text);
-  min-height: 100vh;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  padding-left: var(--gutter);
-}
+  <!-- OFF-SCREEN BURGER MENU -->
+  <aside class="off-screen-menu">
+    <ul>
+      <li><a href="https://instagram.com/rubyarcher" target="_blank">Instagram</a></li>
+      <li><a href="#">Other Portfolios</a></li>
+      <li><a href="#">Example</a></li>
+    </ul>
+  </aside>
 
-.off-screen-menu {
-  background-color: white;
-  list-style: none;
-  height: 100vh;
-  width: 100%;
-  max-width: 450px;
-  position: fixed;
-  top: 0;
-  right: -450px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  font-size: 3rem;
-  transition: .3s ease;
-}
+  <!-- HAMBURGER TOGGLE -->
+  <nav class="menu-nav">
+    <div class="ham-menu" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
 
-.off-screen-menu ul {
-   list-style: none;    /* ← turn off bullets */
-  margin: 0;
-  padding: 0;
-}
+  <!-- MAIN NAVIGATION -->
+  <main class="container">
+    <ul class="landing-menu">
+      <li><a href="paintings.html">Paintings</a></li>
+      <li><a href="exhibitions.html">Exhibitions</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="about.html">Info</a></li>
+    </ul>
+  </main>
 
-.off-screen-menu.active {
-  right: 0;
-}
-
-.ham-menu {
-  height: 50px;
-  width: 50px;
-  background-color: red;
-  margin-left: auto;
-  position: relative;
-}
-
-.ham-menu span {
-  height: 5px;
-  width: 100%;
-  background-color: #000000;
-  border-radius: 25px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%. -50%);
-  transition: .3s ease;
-}
-
-.ham-menu:nth-child(1) {
-  top: 25%;
-}
-
-.ham-menu:nth-child(3) {
-  top: 75%;
-}
-
-.ham-menu.active span:nth-child(1) {
-  top: 50%;
-  transform: translate(-50%, -50%) rotate(45deg);
-}
-
-.ham-menu.active span:nth-child(2) {
-  opacity: 0;
-}
-
-.ham-menu.active span:nth-child(3) {
-  top: 50%;
-  transform: translate(-50%, 50%) rotate(-45deg);
-}
-
-
-
-
-
-.menu .logo { 
-  font-family: 'Helvetica', sans-serif;
-  text-decoration: none;
-  font-size: 32px; 
-}
-
-/* keep Ruby Archer black (or whatever --text is) in all states */
-.menu .logo,
-.menu .logo:link,
-.menu .logo:visited,
-.menu .logo:hover,
-.menu .logo:active {
-  color: var(--text) !important;
-  text-decoration: none;
-}
-
-.menu.container {
-  position: absolute;
-  top: 0px;
-  left: 20px;
-  width: 100%;       
-  margin-top: 30px;  
-  margin-left: 30px;/* cancel the auto-margins */
-}
-
-.landing-menu {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 532px;
-  margin-top: 115px;
-  margin-left: 20px;
-  gap: 30px;
-}
-
-.landing-menu li a {
-  text-decoration: none;
-  color: var(--text);
-  font-size: 48px;
-  line-height: 80%;   /* or 80% if you prefer tighter */
-  display: block;
-}
+  <script src="js/script.js"></script>
+</body>
+</html>
