@@ -1,0 +1,158 @@
+/* Global styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Header and navigation */
+header {
+  background: #222;
+  color: #fff;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo {
+  font-size: 1.5rem;
+}
+.nav-toggle {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: none; /* hidden by default, shown on small screens */
+}
+nav ul {
+  list-style: none;
+  display: flex;
+}
+nav li + li {
+  margin-left: 1rem;
+}
+nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem;
+}
+nav a.active {
+  border-bottom: 2px solid #fff;
+}
+
+/* Main content */
+main {
+  padding: 1rem;
+}
+h2 {
+  margin-bottom: 0.5rem;
+}
+section.social-links ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  padding: 0;
+}
+section.social-links a {
+  color: #0066cc;
+  text-decoration: none;
+}
+section.social-links a:hover {
+  text-decoration: underline;
+}
+
+/* Gallery grid */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.gallery img {
+  border: 2px solid #ccc;
+  cursor: pointer;
+}
+
+/* Tabs */
+.tab-menu {
+  margin-top: 1rem;
+}
+.tab-button {
+  padding: 0.5rem 1rem;
+  margin-right: 0.5rem;
+  background: #eee;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+.tab-button.active {
+  background: #ddd;
+  border-bottom: 2px solid #888;
+}
+.tab-content {
+  display: none;
+  margin-top: 1rem;
+}
+.tab-content.active {
+  display: block;
+}
+
+/* Modal dialog */
+dialog {
+  border: none;
+  padding: 1.5rem;
+  max-width: 400px;
+}
+dialog::backdrop {
+  background: rgba(0,0,0,0.4);
+}
+dialog .close-modal {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  float: right;
+  cursor: pointer;
+}
+
+/* About page */
+.bio {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+.bio .portrait {
+  max-width: 200px;
+  border: 2px solid #ccc;
+}
+
+/* Responsive behavior */
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: block;
+  }
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background: #333;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+  }
+  nav ul.open {
+    display: flex;
+  }
+  nav li + li {
+    margin: 0;
+  }
+}

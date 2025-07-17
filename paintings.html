@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Paintings – Ruby Archer</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1 class="logo">Ruby Archer</h1>
+    <button class="nav-toggle" aria-label="Open menu">&#9776;</button>
+    <nav id="main-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="paintings.html" class="active">Paintings</a></li>
+        <li><a href="exhibitions.html">Exhibitions</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Paintings</h2>
+    <div class="tab-menu">
+      <button data-target="all" class="tab-button active">All Paintings</button>
+      <button data-target="forsale" class="tab-button">Works for Sale</button>
+    </div>
+
+    <section id="all" class="tab-content active">
+      <div class="gallery">
+        <!-- Placeholder images with alt text -->
+        <img src="https://via.placeholder.com/300x300?text=Painting+1" alt="Painting thumbnail 1" data-title="Painting 1" data-year="2020" data-dimensions="50x70cm" data-medium="Oil on canvas" data-price="$2000">
+        <img src="https://via.placeholder.com/300x300?text=Painting+2" alt="Painting thumbnail 2" data-title="Painting 2" data-year="2019" data-dimensions="40x60cm" data-medium="Acrylic" data-price="NFS">
+        <img src="https://via.placeholder.com/300x300?text=Painting+3" alt="Painting thumbnail 3" data-title="Painting 3" data-year="2021" data-dimensions="60x80cm" data-medium="Oil on panel" data-price="$1500">
+        <img src="https://via.placeholder.com/300x300?text=Painting+4" alt="Painting thumbnail 4" data-title="Painting 4" data-year="2022" data-dimensions="55x75cm" data-medium="Watercolor" data-price="$1200">
+      </div>
+    </section>
+
+    <section id="forsale" class="tab-content">
+      <div class="gallery">
+        <!-- Subset of images marked as for sale -->
+        <img src="https://via.placeholder.com/300x300?text=Painting+2" alt="Painting 2 for sale" data-title="Painting 2" data-year="2019" data-dimensions="40x60cm" data-medium="Acrylic" data-price="$2000">
+        <img src="https://via.placeholder.com/300x300?text=Painting+4" alt="Painting 4 for sale" data-title="Painting 4" data-year="2022" data-dimensions="55x75cm" data-medium="Watercolor" data-price="$1500">
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Ruby Archer</p>
+  </footer>
+
+  <!-- Modal dialog for painting details -->
+  <dialog id="painting-modal" aria-modal="true">
+    <button class="close-modal" aria-label="Close">&times;</button>
+    <h3 id="modal-title">Title</h3>
+    <p><strong>Year:</strong> <span id="modal-year"></span></p>
+    <p><strong>Dimensions:</strong> <span id="modal-dimensions"></span></p>
+    <p><strong>Medium:</strong> <span id="modal-medium"></span></p>
+    <p><strong>Price:</strong> <span id="modal-price"></span></p>
+  </dialog>
+</body>
+</html>
