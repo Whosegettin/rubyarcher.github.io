@@ -42,6 +42,7 @@ body {
 .ham-menu {
   height: 50px;
   width: 50px;
+  background-color: red;
   margin-left: auto;
   position: relative;
 }
