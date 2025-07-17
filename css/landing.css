@@ -17,6 +17,12 @@ body {
   padding-left: var(--gutter);
 }
 
+.menu .logo { 
+  font-family: 'Playfair Display', serif; 
+  font-size: 36px; 
+  font-weight: 700;
+}
+
 .menu.container {
   position: absolute;
   top: 0;
