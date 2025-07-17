@@ -1,158 +1,164 @@
-/* Global styles */
+:root {
+  --bg: #f5f0e6;
+  --text: #222;
+  --maxW: 800px;
+  --gap: 40px;
+  --gutter: 20px;
+}
+
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
+
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  line-height: 1.6;
-  color: #333;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Arial, sans-serif;
+  line-height: 1.1;
 }
-img {
-  max-width: 100%;
-  height: auto;
+
+.container {
+  max-width: var(--maxW);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+/* ─── Header / Nav ───────────────────────────────────────────────────────── */
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 0;
+}
+
+.menu .logo {
+  text-decoration: none;
+  color: var(--text);
+  font-size: 24px;
+}
+
+.menu .menu-toggle {
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* ─── Side panel (for ☰) ─────────────────────────────────────────────────── */
+
+.side-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 200px;
+  height: 100%;
+  background: var(--bg);
+  border-left: 1px solid var(--text);
+  padding: var(--gutter);
+  display: none;
+}
+
+.side-menu.active {
   display: block;
 }
 
-/* Header and navigation */
-header {
-  background: #222;
-  color: #fff;
-  padding: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.logo {
-  font-size: 1.5rem;
-}
-.nav-toggle {
-  background: none;
-  border: none;
-  color: #fff;
-  font-size: 1.5rem;
-  cursor: pointer;
-  display: none; /* hidden by default, shown on small screens */
-}
-nav ul {
+.side-menu ul {
   list-style: none;
-  display: flex;
-}
-nav li + li {
-  margin-left: 1rem;
-}
-nav a {
-  color: #fff;
-  text-decoration: none;
-  padding: 0.5rem;
-}
-nav a.active {
-  border-bottom: 2px solid #fff;
 }
 
-/* Main content */
-main {
-  padding: 1rem;
+.side-menu li {
+  margin-bottom: 10px;
+  font-size: 18px;
 }
-h2 {
-  margin-bottom: 0.5rem;
+
+/* ─── Page title ─────────────────────────────────────────────────────────── */
+
+.page-title {
+  text-align: center;
+  font-size: 64px;
+  margin-bottom: var(--gap);
 }
-section.social-links ul {
-  list-style: none;
+
+/* ─── About page ────────────────────────────────────────────────────────── */
+
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--gap);
+}
+
+.about-content .bio {
+  font-size: 24px;
+}
+
+.about-content .portrait {
+  border: 1px solid var(--text);
+  min-height: 250px;
   display: flex;
-  gap: 1rem;
-  padding: 0;
+  justify-content: center;
+  align-items: center;
 }
-section.social-links a {
-  color: #0066cc;
-  text-decoration: none;
+
+/* ─── Contact page ──────────────────────────────────────────────────────── */
+
+.contact-info {
+  font-size: 24px;
+  max-width: 600px;
+  margin: 0 auto;
 }
-section.social-links a:hover {
+
+.contact-info a {
+  color: var(--text);
   text-decoration: underline;
 }
 
-/* Gallery grid */
-.gallery {
+/* ─── Exhibitions page ─────────────────────────────────────────────────── */
+
+.section {
+  margin-bottom: var(--gap);
+}
+
+.section h2 {
+  font-size: 24px;
+  margin-bottom: var(--gap / 2);
+}
+
+.exhib-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 1rem;
-  margin-top: 1rem;
-}
-.gallery img {
-  border: 2px solid #ccc;
-  cursor: pointer;
+  grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
+  gap: var(--gap);
 }
 
-/* Tabs */
-.tab-menu {
-  margin-top: 1rem;
-}
-.tab-button {
-  padding: 0.5rem 1rem;
-  margin-right: 0.5rem;
-  background: #eee;
-  border: 1px solid #ccc;
-  cursor: pointer;
-}
-.tab-button.active {
-  background: #ddd;
-  border-bottom: 2px solid #888;
-}
-.tab-content {
-  display: none;
-  margin-top: 1rem;
-}
-.tab-content.active {
-  display: block;
-}
-
-/* Modal dialog */
-dialog {
-  border: none;
-  padding: 1.5rem;
-  max-width: 400px;
-}
-dialog::backdrop {
-  background: rgba(0,0,0,0.4);
-}
-dialog .close-modal {
-  background: none;
-  border: none;
-  font-size: 1.5rem;
-  float: right;
-  cursor: pointer;
-}
-
-/* About page */
-.bio {
+.exhib-item {
+  border: 1px solid var(--text);
+  min-height: 150px;
   display: flex;
-  align-items: flex-start;
-  gap: 1rem;
-}
-.bio .portrait {
-  max-width: 200px;
-  border: 2px solid #ccc;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
 }
 
-/* Responsive behavior */
-@media (max-width: 768px) {
-  .nav-toggle {
-    display: block;
-  }
-  nav ul {
-    display: none;
-    flex-direction: column;
-    background: #333;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-  }
-  nav ul.open {
-    display: flex;
-  }
-  nav li + li {
-    margin: 0;
-  }
+/* ─── Paintings page ───────────────────────────────────────────────────── */
+
+.paints-info {
+  font-size: 24px;
+  margin-bottom: var(--gap);
+}
+
+.paints-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
+  gap: var(--gap);
+}
+
+.paint-item {
+  border: 1px solid var(--text);
+  min-height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
 }
