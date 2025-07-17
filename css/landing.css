@@ -1,7 +1,8 @@
 /* landing.css */
 :root {
   --bg: #ffffff;
-  --text: #000;       /* from your Figma spec */
+  --text: #000; 
+  --gutter: 20px 
 }
 * { margin:0; padding:0; box-sizing:border-box; }
 
