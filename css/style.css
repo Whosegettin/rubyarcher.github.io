@@ -1,7 +1,7 @@
 :root {
   --bg: #f5f0e6;
   --text: #222;
-  --maxW: 100px;
+  --maxW: 800px;
   --gap: 40px;
   --gutter: 20px;
 }
@@ -17,6 +17,8 @@ body {
   color: var(--text);
   font-family: Helvetica, sans-serif;
   line-height: 1.1;
+
+  
 }
 
 .container {
@@ -34,17 +36,28 @@ body {
   padding: 40px 0;
 }
 
-.menu .logo {
-  text-decoration: none;
-  color: var(--text);
-  font-size: 24px;
+/* 1) make the UL a flex-column at the exact width */
+main ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 532px;     /* as per Sigma */
+  flex-shrink: 0;
+  margin: 100px auto; /* center-it vertically however you like */
+  list-style: none;
+  padding: 0;
 }
 
-.menu .menu-toggle {
-  font-size: 24px;
-  background: none;
-  border: none;
-  cursor: pointer;
+/* 2) update each link’s typography & color */
+main ul li a {
+  display: block;       /* so width/height apply cleanly */
+  color: #000;          /* exact hex from Sigma */
+  font-family: 'Archivo', sans-serif;
+  font-size: 48px;      /* Sigma’s 48px */
+  font-weight: 400;     /* “normal” in Archivo */
+  line-height: 150%;    /* 72px on a 48px font */
+  text-decoration: none;
+  margin-bottom: 30px;  /* gap between items */
 }
 
 /* ─── Side panel (for ☰) ─────────────────────────────────────────────────── */
