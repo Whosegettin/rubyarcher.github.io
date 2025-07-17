@@ -11,8 +11,9 @@ body {
   color: var(--text);
   min-height: 100vh;
   display: flex;
-  justify-content: left;
-  align-items: left;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: var(--gutter);
 }
 
 main ul {
