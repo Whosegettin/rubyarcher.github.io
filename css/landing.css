@@ -7,7 +7,7 @@
 
 body {
   background: var(--bg);
-  font-family: 'Archivo', sans-serif;
+  font-family: 'Helvetica', sans-serif;
   color: var(--text);
   min-height: 100vh;
   display: flex;
