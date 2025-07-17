@@ -2,7 +2,7 @@
 :root {
   --bg: #ffffff;
   --text: #000; 
-  --gutter: 20px 
+  --gutter: 20px;
 }
 * { margin:0; padding:0; box-sizing:border-box; }
 
@@ -109,8 +109,8 @@ body {
 
 .menu.container {
   position: absolute;
-  top: 0;
-  left: 20;
+  top: 0px;
+  left: 20px;
   width: 100%;       
   margin-top: 30px;  
   margin-left: 30px;/* cancel the auto-margins */
@@ -124,7 +124,6 @@ body {
   width: 532px;
   margin-top: 115px;
   margin-left: -20px;
-  padding: ;
   gap: 30px;
 }
 
