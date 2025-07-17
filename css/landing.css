@@ -17,6 +17,11 @@ body {
   padding-left: var(--gutter);
 }
 
+.menu.container {
+  margin-top: 50px;    /* push it down 50px from the top */
+  margin-bottom: 30px; /* add space below before your list */
+}
+
 .landing-menu {
   list-style: none;
   display: flex;
