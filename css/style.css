@@ -13,10 +13,19 @@
 }
 
 body {
-  background: var(--bg);
-  color: var(--text);
-  font-family: Helvetica, sans-serif;
-  line-height: 1.1;
+  display: flex;
+width: 532px;
+height: 30px;
+flex-direction: column;
+justify-content: center;
+flex-shrink: 0;
+
+  color: #000;
+font-family: Archivo;
+font-size: 48px;
+font-style: normal;
+font-weight: 400;
+line-height: 150%; /* 72px */
 
   
 }
