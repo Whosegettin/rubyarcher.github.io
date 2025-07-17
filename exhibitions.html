@@ -1,48 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Exhibitions – Ruby Archer</title>
-  <link rel="stylesheet" href="css/style.css">
-  <script src="js/script.js" defer></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Exhibitions • Ruby Archer</title>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <header>
-    <h1 class="logo">Ruby Archer</h1>
-    <button class="nav-toggle" aria-label="Open menu">&#9776;</button>
-    <nav id="main-nav">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="paintings.html">Paintings</a></li>
-        <li><a href="exhibitions.html" class="active">Exhibitions</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="about.html">About</a></li>
-      </ul>
-    </nav>
+  <header class="menu container">
+    <a href="index.html" class="logo">Ruby Archer</a>
+    <button class="menu-toggle" aria-label="Menu">☰</button>
   </header>
+  <aside class="side-menu">
+    <ul>
+      <li>Instagram</li>
+      <li>Other online art portfolios</li>
+    </ul>
+  </aside>
 
-  <main>
-    <h2>Exhibitions</h2>
-    <section>
-      <h3>Upcoming</h3>
-      <ul>
-        <li><em>Exhibition A</em> – June 2025</li>
-        <li><em>Exhibition B</em> – July 2025</li>
-      </ul>
+  <main class="container">
+    <h1 class="page-title">Exhibitions</h1>
+
+    <section class="section upcoming">
+      <h2>Upcoming</h2>
+      <div class="exhib-grid">
+        <div class="exhib-item">Exhibition</div>
+        <div class="exhib-item">Exhibition</div>
+        <div class="exhib-item">Exhibition</div>
+      </div>
     </section>
-    <section>
-      <h3>Past</h3>
-      <ul>
-        <li><em>Exhibition X</em> – 2024</li>
-        <li><em>Exhibition Y</em> – 2023</li>
-        <li><em>Exhibition Z</em> – 2022</li>
-      </ul>
+
+    <section class="section past">
+      <h2>Past</h2>
+      <div class="exhib-grid">
+        <div class="exhib-item">Exhibition</div>
+        <div class="exhib-item">Exhibition</div>
+        <div class="exhib-item">Exhibition</div>
+      </div>
     </section>
   </main>
 
-  <footer>
-    <p>&copy; 2025 Ruby Archer</p>
-  </footer>
+  <script src="js/menu.js"></script>
 </body>
 </html>
