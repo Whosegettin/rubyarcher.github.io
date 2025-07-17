@@ -1,133 +1,111 @@
-/* ───────────────────────────────────────────────── */
-/* VARIABLES & RESET                              */
-/* ───────────────────────────────────────────────── */
+/* ───── Variables & reset ───────────────────────── */
 :root {
-  --bg:      #fff;
-  --text:    #000;
+  --bg:      #ffffff;
+  --text:    #000000;
   --gutter:  20px;
-  --maxW:    800px;   /* container width */
+  --maxW:    800px;       /* shared container width  */
 }
 
-* {
-  margin:  0;
-  padding: 0;
-  box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
-/* ───────────────────────────────────────────────── */
-/* BASE LAYOUT                                    */
-/* ───────────────────────────────────────────────── */
-/* You’d forgotten to define .container, so nothing
-   was ever centered or constrained. */
+/* ───── Generic container helper ────────────────── */
 .container {
-  max-width:     var(--maxW);
-  margin:        0 auto;
-  padding:       0 var(--gutter);
-  width:         100%;
+  max-width: var(--maxW);
+  margin:    0 auto;
+  padding:   0 var(--gutter);
+  width:     100%;
 }
 
+/* ───── Page base layout ────────────────────────── */
 body {
-  background:    var(--bg);
-  color:         var(--text);
-  font-family:   Helvetica, sans-serif;
-  min-height:    100vh;
-  display:       flex;
-  justify-content: flex-start; /* left-align */
-  align-items:     center;      /* vertically center */
+  background: var(--bg);
+  color:      var(--text);
+  font-family: Helvetica, sans-serif;
+  min-height: 100vh;
+  display:    flex;
+  justify-content: flex-start; /* left-aligned main column */
+  align-items:     center;     /* vertically centred */
 }
 
-/* ───────────────────────────────────────────────── */
-/* HEADER / LOGO                                  */
-/* ───────────────────────────────────────────────── */
-/* Simplify selector: you only need .header-logo */
+/* ───── Header & logo ───────────────────────────── */
 header.site-header {
-  position:      absolute;
-  top:           var(--gutter);
-  left:          var(--gutter);
+  position: absolute;
+  top:  var(--gutter);
+  left: var(--gutter);
 }
 .site-header .logo {
-  font-size:     32px;
-  color:         var(--text);
+  font-size: 32px;
   text-decoration: none;
+  color: var(--text);
 }
 
-/* ───────────────────────────────────────────────── */
-/* HAMBURGER TOGGLE                               */
-/* ───────────────────────────────────────────────── */
-/* Fixed: you were giving each span only 4px width
-   & never closed --gutter so none of this ever ran. */
+/* ───── Hamburger toggle ────────────────────────── */
 nav.menu-nav {
-  position:      absolute;
-  top:           var(--gutter);
-  right:         var(--gutter);
-  z-index:       999;
+  position: absolute;
+  top:  var(--gutter);
+  right: var(--gutter);
+  z-index: 1000;
 }
+
 .ham-menu {
-  width:         30px;
-  display:       flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap:           6px;
-  cursor:        pointer;
+  width: 30px;
+  height: 22px;                    /* 3×4px bars + 2×5px gaps */
+  position: relative;
+  cursor: pointer;
 }
 .ham-menu span {
-  display:       block;
-  width:         100%;
-  height:        4px;
-  background:    var(--text);
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--text);
   border-radius: 2px;
-  transition:    transform .3s ease, opacity .3s ease;
+  transition: transform .3s ease, opacity .3s ease;
+}
+.ham-menu span:nth-child(1) { top: 0; }
+.ham-menu span:nth-child(2) { top: 9px; }
+.ham-menu span:nth-child(3) { bottom: 0; }
+
+/* morph to ✕ */
+.ham-menu.active span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+.ham-menu.active span:nth-child(2) { opacity: 0; }
+.ham-menu.active span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
 }
 
-/* ───────────────────────────────────────────────── */
-/* OFF-SCREEN MENU                                 */
-/* ───────────────────────────────────────────────── */
-/* Merged list-style into the parent, tightened
-   up right offset, and scoped the UL reset. */
+/* ───── Off-screen panel ────────────────────────── */
 .off-screen-menu {
-  position:      fixed;
-  top:           0;
-  right:         -450px;  /* hide offscreen */
-  width:         450px;
-  height:        100%;
-  background:    var(--bg);
-  display:       flex;
+  position: fixed;
+  top: 0;
+  right: -450px;                 /* start hidden */
+  width: 450px;
+  height: 100%;
+  background: var(--bg);
+  display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items:   center;
-  text-align:    center;
-  font-size:     2rem;
-  transition:    right .3s ease;
+  align-items: center;
+  text-align: center;
+  font-size: 2rem;
+  transition: right .3s ease;
 }
-.off-screen-menu ul {
-  list-style: none;
-  margin:     0;
-  padding:    0;
-}
-.off-screen-menu.active {
-  right: 0;
-}
+.off-screen-menu ul { list-style: none; }
+.off-screen-menu.active { right: 0; }
 
-/* ───────────────────────────────────────────────── */
-/* LANDING NAV LIST                               */
-/* ───────────────────────────────────────────────── */
-/* Cleaned up stray margin/padding, matched your
-   HTML class exactly, and removed the incorrect
-   line-height:80% (it was collapsing your text). */
+/* ───── Landing vertical nav ────────────────────── */
 .landing-menu {
-  list-style:    none;
-  display:       flex;
+  list-style: none;
+  display: flex;
   flex-direction: column;
-  justify-content: center;
-  width:         532px;
-  margin:        140px 0 0 0;  /* space down from header */
-  padding:       0;
-  gap:           30px;
+  gap: 30px;
+  margin-top: 140px;  /* push below header */
+  width: 532px;
 }
-.landing-menu li a {
+.landing-menu a {
+  font-size: 48px;
+  line-height: 150%;
+  color: var(--text);
   text-decoration: none;
-  color:           var(--text);
-  font-size:       48px;
-  line-height:     150%;
-  display:         block;
 }
