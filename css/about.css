@@ -1,3 +1,4 @@
+/* Reset and base styles */
 * {
   margin: 0;
   padding: 0;
@@ -10,15 +11,24 @@ body {
   color: #000;
 }
 
-.bio-section {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 40px;
-  padding: 0 20px;
-  margin-top: 60px;
+/* Main container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
 }
 
+/* Bio section layout */
+.bio-section {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  max-width: 900px;
+  margin: 60px auto 0;
+}
+
+/* Bio text */
 .bio-text {
   flex: 1 1 60%;
   font-size: 1.1rem;
@@ -31,6 +41,7 @@ body {
   font-weight: bold;
 }
 
+/* Image */
 .bio-image {
   flex: 0 0 300px;
   max-width: 300px;
@@ -44,18 +55,15 @@ body {
   aspect-ratio: 1 / 1;
 }
 
-/* Responsive stacking */
+/* Responsive stacking on small screens */
 @media (max-width: 700px) {
   .bio-section {
     flex-direction: column;
     align-items: center;
-  }
-
-  .bio-text {
     text-align: center;
   }
 
-  header.site-header h1 {
-    font-size: 1.5rem;
+  .bio-image {
+    margin-top: 20px;
   }
 }
