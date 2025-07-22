@@ -4,35 +4,37 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About - Ruby Archer</title>
+  <link rel="stylesheet" href="css/menu.css" />
   <link rel="stylesheet" href="css/about.css" />
-  <link rel="stylesheet" href="css/menu.css">
 </head>
 <body>
+
+  <!-- Shared Hamburger Header -->
+  <header class="site-header container">
+    <a href="index.html" class="logo">Ruby Archer</a>
+  </header>
+
+  <!-- Side Menu -->
+  <aside class="off-screen-menu" id="sidePanel">
+    <ul>
+      <li><a href="https://instagram.com/rubyarcher" target="_blank">Instagram</a></li>
+      <li><a href="#">Other Portfolios</a></li>
+      <li><a href="#">Example</a></li>
+    </ul>
+  </aside>
+
+  <!-- Hamburger Button -->
+  <nav class="menu-nav">
+    <div class="ham-menu" id="hamBtn" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- Main About Content -->
   <div class="container">
-
-<!-- Header / logo -->
-<header class="site-header container">
-  <a href="index.html" class="logo">Ruby Archer</a>
-</header>
-
-<!-- Side panel -->
-<aside class="off-screen-menu" id="sidePanel">
-  <ul>
-    <li><a href="https://instagram.com/rubyarcher" target="_blank">Instagram</a></li>
-    <li><a href="#">Other Portfolios</a></li>
-    <li><a href="#">Example</a></li>
-  </ul>
-</aside>
-
-<!-- Hamburger button -->
-<nav class="menu-nav">
-  <div class="ham-menu" id="hamBtn" aria-label="Toggle menu">
-    <span></span><span></span><span></span>
-  </div>
-</nav>
-
-
     <main class="bio-section">
+      <h1>About</h1>
+
       <div class="bio-text">
         <h2>Bio</h2>
         <p>
@@ -52,6 +54,7 @@
       </div>
     </main>
   </div>
+
   <script src="js/script.js"></script>
 </body>
 </html>
