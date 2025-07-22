@@ -12,7 +12,7 @@ body {
 }
 
 .container {
-  max-width: 1100px;
+  max-width: 11100px;
   margin: 0 auto;
   padding: 40px 20px;
 }
@@ -38,26 +38,34 @@ header {
 }
 
 h1 {
+  text-align: center;
   font-size: 2.5rem;
   font-weight: bold;
+  margin-top: 20px;
 }
 
+
+
+/* Main content layout */
 .bio-section {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
   gap: 40px;
 }
 
 .bio-text {
-  flex: 1 1 60%;
+  flex: 1 1 55%;
   font-size: 1.1rem;
   line-height: 1.6;
 }
 
+.bio-text h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
 .bio-image {
-  flex: 0 0 300px;
-  max-width: 300px;
+  flex: 1 1 35%;
 }
 
 .bio-image p {
@@ -66,9 +74,7 @@ h1 {
 }
 
 .bio-image img {
-  width: 100%;
+  max-width: 100%;
   height: auto;
-  border: 2px solid #ccc;
-  object-fit: cover;
-  aspect-ratio: 1 / 1; /* ⬅️ Keeps it square-like */
+  display: block;
 }
