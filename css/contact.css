@@ -1,0 +1,58 @@
+/* Reset default margins and paddings */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  color: #000;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  border: 6px solid #333;
+  background-color: #fff;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.logo {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.cursor {
+  font-size: 1rem;
+  margin-left: 5px;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+main p {
+  margin-bottom: 25px;
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+.contact-info {
+  margin-top: 40px;
+  font-size: 1.1rem;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
