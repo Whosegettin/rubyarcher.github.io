@@ -16,6 +16,7 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 40px 20px;
+  padding-top: 120px; /* 👈 Pushes content down */
 }
 
 /* Bio section layout */
@@ -25,7 +26,7 @@ body {
   align-items: flex-start;
   gap: 40px;
   max-width: 900px;
-  margin: 60px auto 0;
+  margin: 250px auto 0; /* 👈 Further vertical spacing */
 }
 
 /* Bio text */
