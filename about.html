@@ -9,12 +9,20 @@
 </head>
 <body>
 
-  <!-- Hamburger Header -->
-  <header class="site-header container">
+  <!-- Site Header -->
+  <header class="site-header">
     <a href="index.html" class="logo">Ruby Archer</a>
+    <h1>About</h1>
   </header>
 
-  <!-- Side panel -->
+  <!-- Hamburger Nav -->
+  <nav class="menu-nav">
+    <div class="ham-menu" id="hamBtn" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- Side Panel -->
   <aside class="off-screen-menu" id="sidePanel">
     <ul>
       <li><a href="https://instagram.com/rubyarcher" target="_blank">Instagram</a></li>
@@ -23,39 +31,35 @@
     </ul>
   </aside>
 
-  <!-- Hamburger button -->
-  <nav class="menu-nav">
-    <div class="ham-menu" id="hamBtn" aria-label="Toggle menu">
-      <span></span><span></span><span></span>
+  <!-- Bio Content -->
+  <main class="bio-section">
+    <div class="bio-text">
+      <h2>Bio</h2>
+      <p>
+        Ruby Archer (b.2003) is an emerging artist deeply engaged in her studio practice.
+        She is currently perusing her BFA at RMIT University. With a determined focus in
+        her practice of oils, Ruby is an artist dedicated to exploring the familial and
+        domestic in her paintings informed through her candid photography.
+      </p>
+      <p>
+        The strong influence of photography informing her studio practice has led to group shows
+        such as <em>Winter Light</em>.
+      </p>
     </div>
-  </nav>
+    <div class="bio-image">
+      <img src="studio-pic.jpg" alt="Ruby Archer in studio" />
+    </div>
+  </main>
 
-  <!-- Actual page content -->
-  <div class="container">
-    <h1 class="page-title">About</h1>
+  <!-- JavaScript -->
+  <script>
+    const hamBtn = document.getElementById("hamBtn");
+    const sidePanel = document.getElementById("sidePanel");
 
-    <main class="bio-section">
-      <div class="bio-text">
-        <h2>Bio</h2>
-        <p>
-          Ruby Archer (b.2003) is an emerging artist deeply engaged in her studio practice.
-          She is currently perusing her BFA at RMIT University. With a determined focus in
-          her practice of oils, Ruby is an artist dedicated to exploring the familial and
-          domestic in her paintings informed through her candid photography.
-        </p>
-        
-        <p>
-          The strong influence of photography informing her studio practice has led to group shows
-          such as <em>Winter Light</em>.
-        </p>
-      </div>
-
-      <div class="bio-image">
-        <img src="studio-pic.jpg" alt="Ruby Archer in studio" />
-      </div>
-    </main>
-  </div>
-
-  <script src="js/script.js"></script>
+    hamBtn.addEventListener("click", () => {
+      hamBtn.classList.toggle("active");
+      sidePanel.classList.toggle("active");
+    });
+  </script>
 </body>
 </html>
