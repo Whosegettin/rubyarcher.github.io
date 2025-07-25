@@ -9,47 +9,56 @@ body {
   font-family: Helvetica, sans-serif;
   background-color: #fff;
   color: #000;
-  padding: 40px 60px;
+  padding: 20px 60px; /* Reduced top padding for better alignment */
 }
 
 /* Header layout */
 header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  margin-bottom: 60px;
+  align-items: center;       /* ✅ Vertically align logo, h1, menu */
+  margin-bottom: 80px;
 }
 
-/* Logo on left */
-.logo a {
+
+/* Logo and Heading spacing */
+header .logo {
+  font-size: 1.8rem;
+  font-weight: bold;
   text-decoration: none;
   color: inherit;
-  font-weight: bold;
-  font-size: 1.2rem;
+  margin-top: -10px; /* Optional fine-tune */
 }
 
-/* Page title on right */
 header h1 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: bold;
-  margin: 0;
+  margin-top: -30px; /* Optional fine-tune */
 }
+
 
 /* Paragraphs */
 main p {
+  margin-left: 40px;
   margin-bottom: 40px;
   font-size: 1.1rem;
   line-height: 1.6;
 }
 
-/* Contact info block */
-.contact-info {
-  margin-top: 40px;
-  font-size: 1.1rem;
-}
+/* Optional responsive tweak */
+@media (max-width: 600px) {
+  body {
+    padding: 20px 20px;
+  }
 
-a {
-  color: #000;
-  text-decoration: none;
-}
+  header {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
 
+  header h1 {
+    text-align: left;
+    
+  }
+}
