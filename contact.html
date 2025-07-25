@@ -47,7 +47,15 @@
          E-mail. <a href="mailto:rubyarcher03@gmail.com">rubyarcher03@gmail.com</a></p>
     </div>
   </main>
-  <script src="js/script.js"></script>
+ <!-- JavaScript -->
+  <script>
+    const hamBtn = document.getElementById("hamBtn");
+    const sidePanel = document.getElementById("sidePanel");
 
+    hamBtn.addEventListener("click", () => {
+      hamBtn.classList.toggle("active");
+      sidePanel.classList.toggle("active");
+    });
+  </script>
 </body>
 </html>
