@@ -24,6 +24,7 @@ header.site-header {
   align-items: center;
   padding: var(--gutter);
   position: relative;
+  margin-left: 15px;
 }
 
 header.site-header .logo {
