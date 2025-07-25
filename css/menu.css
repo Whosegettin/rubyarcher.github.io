@@ -27,13 +27,12 @@ header.site-header {
 }
 
 header.site-header .logo {
-  grid-column: 1;
-  justify-self: start;
   font-size: 1.8rem;
-  font-weight: bold;
+  font-family: Helvetica, sans-serif;
   text-decoration: none;
-  color: var(--text);
+  color: #000;
 }
+
 
 header.site-header h1 {
   grid-column: 2;
