@@ -105,8 +105,14 @@ nav.menu-nav {
 }
 .landing-menu a {
   font-size: 48px;
-  margin-left: -525px;
   line-height: 150%;
   color: var(--text);
   text-decoration: none;
+}
+
+/* Apply the hard-left shift ONLY on wide screens */
+@media screen and (min-width: 900px) {
+  .landing-menu a {
+    margin-left: -525px;
+  }
 }
