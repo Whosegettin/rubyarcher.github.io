@@ -105,6 +105,7 @@ nav.menu-nav {
 }
 .landing-menu a {
   font-size: 48px;
+  margin-left: -525px;
   line-height: 150%;
   color: var(--text);
   text-decoration: none;
