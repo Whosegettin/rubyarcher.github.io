@@ -11,16 +11,6 @@ body {
   color: #000;
 }
 
-header.site-header {
-  position: absolute;
-  top:  var(--gutter);
-  left: var(--gutter);
-}
-.site-header .logo {
-  font-size: 32px;
-  text-decoration: none;
-  color: var(--text);
-}
 
 /* Main container */
 .container {
