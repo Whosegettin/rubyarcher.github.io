@@ -1,45 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Exhibitions • Ruby Archer</title>
-  <link rel="stylesheet" href="css/styles.css">
+  <!-- Reuse the shared menu styles for header, hamburger menu and side panel -->
+  <link rel="stylesheet" href="css/menu.css" />
+  <!-- Page specific styles for exhibitions -->
+  <link rel="stylesheet" href="css/exhibitions.css" />
 </head>
 <body>
-  <header class="menu container">
+  <!-- Site header -->
+  <header class="site-header">
     <a href="index.html" class="logo">Ruby Archer</a>
-    <button class="menu-toggle" aria-label="Menu">☰</button>
+    <h1>Exhibitions</h1>
   </header>
-  <aside class="side-menu">
+
+  <!-- Hamburger navigation -->
+  <nav class="menu-nav">
+    <div class="ham-menu" id="hamBtn" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- Off‑screen side panel -->
+  <aside class="off-screen-menu" id="sidePanel">
     <ul>
-      <li>Instagram</li>
-      <li>Other online art portfolios</li>
+      <li><a href="https://instagram.com/rubyarcher" target="_blank">Instagram</a></li>
+      <li><a href="#">Other Portfolios</a></li>
+      <li><a href="#">Example</a></li>
     </ul>
   </aside>
 
-  <main class="container">
-    <h1 class="page-title">Exhibitions</h1>
-
-    <section class="section upcoming">
+  <!-- Main content -->
+  <main class="container exhibitions-content">
+    <!-- Upcoming section -->
+    <section class="upcoming-section">
       <h2>Upcoming</h2>
-      <div class="exhib-grid">
-        <div class="exhib-item">Exhibition</div>
-        <div class="exhib-item">Exhibition</div>
-        <div class="exhib-item">Exhibition</div>
-      </div>
+      <p class="no-upcoming">No Upcoming Exhibitions</p>
     </section>
 
-    <section class="section past">
+    <!-- Past section -->
+    <section class="past-section">
       <h2>Past</h2>
-      <div class="exhib-grid">
-        <div class="exhib-item">Exhibition</div>
-        <div class="exhib-item">Exhibition</div>
-        <div class="exhib-item">Exhibition</div>
+      <div class="past-grid">
+        <!-- Exhibition card: Winter Light -->
+        <div class="exhibition-card">
+          <div class="exhibition-header">
+            <span class="title">Winter Light</span>
+            <span class="year">2025</span>
+          </div>
+          <div class="exhibition-venue">Brunswick St Gallery, VIC</div>
+          <div class="exhibition-dates">July 12<sup>th</sup> – 27<sup>th</sup></div>
+        </div>
+        <!-- Exhibition card: NoVacancy Annual 2024 -->
+        <div class="exhibition-card">
+          <div class="exhibition-header">
+            <span class="title">NoVacancy Annual 2024</span>
+            <span class="year">2024</span>
+          </div>
+          <div class="exhibition-venue">NoVacancy, VIC</div>
+          <div class="exhibition-dates">July 12<sup>th</sup> – 27<sup>th</sup></div>
+        </div>
+        <!-- Exhibition card: ArtRage -->
+        <div class="exhibition-card">
+          <div class="exhibition-header">
+            <span class="title">ArtRage</span>
+            <span class="year">2021</span>
+          </div>
+          <div class="exhibition-venue">Statewide, TAS</div>
+          <div class="exhibition-dates">Nov. 2021 – Aug. 2022</div>
+        </div>
       </div>
     </section>
   </main>
 
-  <script src="js/menu.js"></script>
+  <!-- Shared JavaScript for menu toggle -->
+  <script src="js/script.js"></script>
 </body>
 </html>
