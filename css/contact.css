@@ -1,64 +1,146 @@
-/* Reset and base styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Paintings • Ruby Archer</title>
+  <!--
+    Reuse the shared menu styles for the hamburger and off‑screen panel.
+    See css/menu.css in this repo for definitions of .site-header, .ham-menu,
+    .off-screen-menu and other shared classes.  Keeping the same classes
+    ensures the new page fits seamlessly with the rest of the site.
+  -->
+  <link rel="stylesheet" href="css/menu.css" />
+  <!-- Page specific styles -->
+  <link rel="stylesheet" href="css/paintings.css" />
+</head>
+<body>
+  <!-- Site header containing the logo and page title -->
+  <header class="site-header">
+    <a href="index.html" class="logo">Ruby Archer</a>
+    <h1>Paintings</h1>
+  </header>
 
-body {
-  font-family: Helvetica, sans-serif;
-  background-color: #fff;
-  color: #000;
-  padding: 20px 60px; /* Reduced top padding for better alignment */
-}
+  <!-- Hamburger button to toggle the side panel -->
+  <nav class="menu-nav">
+    <div class="ham-menu" id="hamBtn" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
 
-/* Header layout */
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;       /* ✅ Vertically align logo, h1, menu */
-  margin-bottom: 80px;
-}
+  <!-- Off‑screen side panel.  This matches the structure used in other
+       pages such as index.html and about.html.  JavaScript in js/script.js
+       handles toggling of the 'active' class on this element. -->
+  <aside class="off-screen-menu" id="sidePanel">
+    <ul>
+      <li><a href="https://instagram.com/rubyarcher" target="_blank">Instagram</a></li>
+      <li><a href="#">Other Portfolios</a></li>
+      <li><a href="#">Example</a></li>
+    </ul>
+  </aside>
 
+  <!-- Main content area -->
+  <main class="container">
+    <!-- Introductory text below the title -->
+    <p class="paints-info">All paintings | Works for sale</p>
 
-/* Logo and Heading spacing */
-header .logo {
-  font-size: 1.8rem;
-  font-weight: bold;
-  text-decoration: none;
-  color: inherit;
-  margin-top: -10px; /* Optional fine-tune */
-}
+    <!-- Grid of paintings.  Each painting is marked up as a <figure> with
+         an <img> and a <figcaption>.  Details such as title, year,
+         dimensions, medium and sale status are split into spans on their
+         own lines to aid layout and accessibility.  Replace the src
+         attributes with your actual image filenames. -->
+    <div class="paints-grid">
+      <figure class="paint-item">
+        <img src="images/tea-szalon.jpg" alt="Tea Szalón painting" />
+        <figcaption>
+          <span class="title">Tea Szalón</span>
+          <span class="year">2025</span>
+          <span class="size">11" × 25"</span>
+          <span class="medium">Oil on Cradle Board</span>
+          <span class="price sold">SOLD</span>
+        </figcaption>
+      </figure>
 
-header h1 {
-  font-size: 2rem;
-  font-weight: bold;
-  margin-top: -30px; /* Optional fine-tune */
-}
+      <figure class="paint-item">
+        <img src="images/bentwood-chair.jpg" alt="Bentwood Chair painting" />
+        <figcaption>
+          <span class="title">Bentwood Chair</span>
+          <span class="year">2025</span>
+          <span class="size">16" × 19"</span>
+          <span class="medium">Oil on Cradle Board</span>
+          <span class="price">$325</span>
+        </figcaption>
+      </figure>
 
+      <figure class="paint-item">
+        <img src="images/stairwell.jpg" alt="Stairwell painting" />
+        <figcaption>
+          <span class="title">Stairwell</span>
+          <span class="year">2025</span>
+          <span class="size">7" × 5"</span>
+          <span class="medium">Oil on Cradle Board</span>
+          <span class="price">$220</span>
+        </figcaption>
+      </figure>
 
-/* Paragraphs */
-main p {
-  margin-left: 40px;
-  margin-bottom: 40px;
-  font-size: 1.1rem;
-  line-height: 1.6;
-}
+      <figure class="paint-item">
+        <img src="images/drive.jpg" alt="Drive painting" />
+        <figcaption>
+          <span class="title">Drive</span>
+          <span class="year">2025</span>
+          <span class="size">8" × 10"</span>
+          <span class="medium">Oil on Cradle Board</span>
+          <span class="price">NFS</span>
+        </figcaption>
+      </figure>
 
-/* Optional responsive tweak */
-@media (max-width: 600px) {
-  body {
-    padding: 20px 20px;
-  }
+      <figure class="paint-item">
+        <img src="images/tobys-hand.jpg" alt="Toby's Hand painting" />
+        <figcaption>
+          <span class="title">Toby's Hand</span>
+          <span class="year">2025</span>
+          <span class="size">5" × 7"</span>
+          <span class="medium">Oil on Cradle Board</span>
+          <span class="price">NFS</span>
+        </figcaption>
+      </figure>
 
-  header {
-    flex-direction: column;
-    gap: 10px;
-    align-items: flex-start;
-  }
+      <figure class="paint-item">
+        <img src="images/pigeon-blues.jpg" alt="Pigeon Blues painting" />
+        <figcaption>
+          <span class="title">Pigeon Blues</span>
+          <span class="year">2025</span>
+          <span class="size">10" × 8"</span>
+          <span class="medium">Oil on Cradle Board</span>
+          <span class="price sold">SOLD</span>
+        </figcaption>
+      </figure>
 
-  header h1 {
-    text-align: left;
-    
-  }
-}
+      <figure class="paint-item">
+        <img src="images/morning-light.jpg" alt="Morning Light painting" />
+        <figcaption>
+          <span class="title">Morning Light</span>
+          <span class="year">2025</span>
+          <span class="size">19" × 23"</span>
+          <span class="medium">Oil on Cradle Board</span>
+          <span class="price">$345</span>
+        </figcaption>
+      </figure>
+
+      <figure class="paint-item">
+        <img src="images/lilies.jpg" alt="Lilies painting" />
+        <figcaption>
+          <span class="title">Lilies</span>
+          <span class="year">2025</span>
+          <span class="size">7" × 8"</span>
+          <span class="medium">Oil on Cradle Board</span>
+          <span class="price sold">SOLD</span>
+        </figcaption>
+      </figure>
+    </div>
+  </main>
+
+  <!-- JavaScript shared between pages -->
+  <script src="js/script.js"></script>
+</body>
+</html>
