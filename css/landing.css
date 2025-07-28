@@ -100,19 +100,19 @@ nav.menu-nav {
   display: flex;
   flex-direction: column;
   gap: 30px;
-  margin-top: 140px;  /* push below header */
-  width: 532px;
-}
-.landing-menu a {
-  font-size: 48px;
-  line-height: 150%;
-  color: var(--text);
-  text-decoration: none;
+  margin: 0;              /* ✅ removes top/side spacing */
+  padding: 0;             /* ✅ removes all internal padding */
+  position: absolute;     /* ✅ pins it */
+  top: 275px;             /* same vertical offset you wanted */
+  left: 0;                /* ✅ pins it to the left edge */
 }
 
-/* Apply the hard-left shift ONLY on wide screens */
-@media screen and (min-width: 900px) {
-  .landing-menu a {
-    margin-left: -525px;
-  }
+.landing-menu a {
+  font-size: 48px;
+  line-height: 1.5;
+  color: var(--text);
+  text-decoration: none;
+  padding: 55px;
+  margin: 0;
 }
+
