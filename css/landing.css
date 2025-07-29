@@ -111,7 +111,7 @@ nav.menu-nav {
   margin: 0;              /* removes top/side spacing */
   padding: 0;             /* removes all internal padding */
   position: absolute;     /* pins it */
-  top: 275px;             /* vertical offset */
+  top: 250px;             /* vertical offset */
   left: 0;                /* pins it to the left edge */
 }
 
