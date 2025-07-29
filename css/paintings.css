@@ -83,7 +83,7 @@
     }
 
     .paint-item img {
-      /* Allow images to scale based on calculated height.  The width
+      /* Allow images to scale based on calculated dimensions.  The width
          adjusts automatically to preserve the intrinsic aspect ratio.
          Using object-fit: contain ensures the entire artwork is visible
          without cropping, reflecting the painting’s actual orientation. */
@@ -91,7 +91,8 @@
       max-width: 100%;
       height: auto;
       object-fit: contain;
-      border: 2px solid #ccc;
+      border: 1px solid #aaa;
+      border-radius: 4px;
     }
 
     .paint-item figcaption {
@@ -135,11 +136,22 @@
       align-items: center;
       background: rgba(0, 0, 0, 0.9);
       z-index: 2000;
-      padding: 40px;
+      padding: 0;
       box-sizing: border-box;
     }
     .lightbox.active {
       display: flex;
+    }
+
+    /* Images inside the lightbox fill the viewport while
+       preserving aspect ratio.  The margins are removed so the
+       artwork occupies as much space as possible. */
+    .lightbox img {
+      width: auto;
+      height: auto;
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
     }
 
     @media (max-width: 600px) {

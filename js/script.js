@@ -73,12 +73,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const heightIn = parseFloat(numbers[1]);
     if (isNaN(widthIn) || isNaN(heightIn) || widthIn <= 0 || heightIn <= 0) return;
     // Determine the longest side and scale it to pixels.  The
-    // constant determines how many pixels correspond to one inch.  A
-    // value of 15 yields full‑size images that remain comfortably
-    // within the responsive grid.
-    const longest   = Math.max(widthIn, heightIn);
-    const pxPerInch = 15;
-    const majorPx   = longest * pxPerInch;
+    // constant determines how many pixels correspond to one inch.  On
+    // narrow screens (e.g. mobile phones) we use a smaller factor so
+    // that images do not become excessively tall, improving the
+    // browsing experience.  For wider screens a larger factor helps
+    // convey relative scale between works.
+    const longest = Math.max(widthIn, heightIn);
+    const pxPerInch = window.innerWidth <= 600 ? 8 : 15;
+    const majorPx = longest * pxPerInch;
     // Apply orientation: landscape paintings set the width, portrait
     // paintings set the height.  The other dimension remains auto to
     // preserve the intrinsic aspect ratio.
@@ -112,13 +114,17 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!img) return;
     img.style.cursor = 'pointer';
     img.addEventListener('click', () => {
-      // Clone the image to avoid manipulating the original element.
+      // Clone the image to avoid manipulating the original element.  We
+      // rely on CSS in paintings.css to size the image so it fills
+      // the screen while preserving aspect ratio.
       const clone = img.cloneNode();
-      // Limit the clone to the viewport; use contain to preserve
-      // aspect ratio.
-      clone.style.maxWidth  = '90%';
-      clone.style.maxHeight = '90%';
-      clone.style.objectFit = 'contain';
+      // Remove any inline sizing that might have been applied to
+      // thumbnails.  The lightbox styles will handle scaling.
+      clone.style.width = '';
+      clone.style.height = '';
+      clone.style.maxWidth = '';
+      clone.style.maxHeight = '';
+      clone.style.objectFit = '';
       lightbox.innerHTML = '';
       lightbox.appendChild(clone);
       lightbox.classList.add('active');

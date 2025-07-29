@@ -115,3 +115,15 @@ nav.menu-nav {
   padding: 55px;
   margin: 0;
 }
+
+/* Responsive adjustments for small screens (phones) */
+@media (max-width: 600px) {
+  .landing-menu {
+    top: 150px;
+    gap: 10px;
+  }
+  .landing-menu a {
+    font-size: 32px;
+    padding: 25px 10px;
+  }
+}
