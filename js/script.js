@@ -79,7 +79,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // browsing experience.  For wider screens a larger factor helps
     // convey relative scale between works.
     const longest = Math.max(widthIn, heightIn);
-    const pxPerInch = window.innerWidth <= 600 ? 8 : 15;
+    // Use a larger scale on mobile devices so thumbnails are
+    // proportionally larger.  This improves legibility and reduces
+    // tiny images on small screens.
+    const pxPerInch = window.innerWidth <= 600 ? 12 : 15;
     const majorPx = longest * pxPerInch;
     // Apply orientation: landscape paintings set the width, portrait
     // paintings set the height.  The other dimension remains auto to
@@ -100,14 +103,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* ── lightbox overlay ─────────────────────────────── */
   // Create a reusable lightbox overlay to display enlarged versions
-  // of paintings.  Clicking on any painting image will clone that
-  // image into the overlay and reveal it.  Clicking the overlay
-  // itself closes it.  This enhancement adds an interactive element
-  // without detracting from the minimalist design.
+  // of paintings.  A close button (×) is added to the top‑left corner
+  // for explicit closing on both desktop and mobile.  Clicking
+  // outside the image also closes the overlay.
   const lightbox = document.createElement('div');
   lightbox.id = 'lightbox';
   lightbox.classList.add('lightbox');
   document.body.appendChild(lightbox);
+  // Close button
+  const closeBtn = document.createElement('span');
+  closeBtn.classList.add('lightbox-close');
+  closeBtn.innerHTML = '&times;';
+  closeBtn.setAttribute('aria-label', 'Close');
+  lightbox.appendChild(closeBtn);
+  // Handler to close overlay when clicking the button
+  closeBtn.addEventListener('click', () => {
+    lightbox.classList.remove('active');
+    lightbox.querySelectorAll('img').forEach(el => el.remove());
+    document.body.style.overflow = '';
+  });
   // When a painting is clicked, populate and open the lightbox.
   paintItems.forEach(item => {
     const img = item.querySelector('img');
@@ -125,17 +139,21 @@ document.addEventListener('DOMContentLoaded', () => {
       clone.style.maxWidth = '';
       clone.style.maxHeight = '';
       clone.style.objectFit = '';
-      lightbox.innerHTML = '';
+      // Remove any previous enlarged image but retain the close button.
+      lightbox.querySelectorAll('img').forEach(el => el.remove());
       lightbox.appendChild(clone);
       lightbox.classList.add('active');
       document.body.style.overflow = 'hidden';
     });
   });
-  // Close the lightbox when clicking outside the image.
+  // Close the lightbox when clicking outside the image and not on the close button.
   lightbox.addEventListener('click', event => {
-    if (event.target !== lightbox) return;
-    lightbox.classList.remove('active');
-    lightbox.innerHTML = '';
-    document.body.style.overflow = '';
+    if (event.target === closeBtn) return;
+    // If the click is on the overlay itself (not the image), close
+    if (event.target === lightbox) {
+      lightbox.classList.remove('active');
+      lightbox.querySelectorAll('img').forEach(el => el.remove());
+      document.body.style.overflow = '';
+    }
   });
 });

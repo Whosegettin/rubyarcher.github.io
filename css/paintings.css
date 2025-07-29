@@ -154,6 +154,18 @@
       object-fit: contain;
     }
 
+    /* Close button inside lightbox */
+    .lightbox-close {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      font-size: 2rem;
+      color: #ffffff;
+      cursor: pointer;
+      user-select: none;
+      z-index: 2100;
+    }
+
     @media (max-width: 600px) {
       /* Tighter spacing on small screens */
       .paints-grid {

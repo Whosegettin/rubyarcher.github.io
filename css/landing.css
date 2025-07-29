@@ -118,12 +118,21 @@ nav.menu-nav {
 
 /* Responsive adjustments for small screens (phones) */
 @media (max-width: 600px) {
+  /* Align content to the top rather than centring vertically to remove
+     unnecessary whitespace. */
+  body {
+    align-items: flex-start;
+  }
+  /* Allow the navigation to flow naturally below the header rather
+     than using absolute positioning.  This reduces excessive top
+     margin while retaining generous spacing between items. */
   .landing-menu {
-    top: 150px;
-    gap: 10px;
+    position: static;
+    margin-top: 100px;
+    gap: 20px;
   }
   .landing-menu a {
-    font-size: 32px;
-    padding: 25px 10px;
+    font-size: 48px;
+    padding: 40px 20px;
   }
 }
