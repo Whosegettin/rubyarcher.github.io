@@ -6,9 +6,10 @@
   <title>Paintings • Ruby Archer</title>
   <!--
     Reuse the shared menu styles for the hamburger and off‑screen panel.
-    See css/menu.css in this repo for definitions of .site-header, .ham-menu,
-    .off-screen-menu and other shared classes.  Keeping the same classes
-    ensures the new page fits seamlessly with the rest of the site.
+    See css/menu.css in this repo for definitions of .site-header, .ham-
+    menu, .off-screen-menu and other shared classes.  Keeping the same
+    classes ensures the new page fits seamlessly with the rest of the
+    site.
   -->
   <link rel="stylesheet" href="css/menu.css" />
   <!-- Page specific styles -->
@@ -41,8 +42,12 @@
 
   <!-- Main content area -->
   <main class="container">
-    <!-- Introductory text below the title -->
-    <p class="paints-info">All paintings | Works for sale</p>
+    <!-- Introductory text and filter controls below the title -->
+    <p class="paints-info">
+      <button id="filter-all" class="filter-btn active">All paintings</button>
+      |
+      <button id="filter-sale" class="filter-btn">Works for sale</button>
+    </p>
 
     <!-- Grid of paintings.  Each painting is marked up as a <figure> with
          an <img> and a <figcaption>.  Details such as title, year,
