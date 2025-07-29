@@ -6,6 +6,14 @@
   --maxW:    800px;       /* shared container width  */
 }
 
+/* Override the global scrollbar rule on the landing page.  Without this
+   rule, html{overflow-y:scroll} from menu.css introduces a tiny
+   vertical scrollbar even when there is no content to scroll.  Allow
+   the browser to decide whether to display a scrollbar. */
+html {
+  overflow-y: auto;
+}
+
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 /* ───── Generic container helper ────────────────── */
@@ -128,11 +136,12 @@ nav.menu-nav {
      margin while retaining generous spacing between items. */
   .landing-menu {
     position: static;
-    margin-top: 200px;
+    margin-top: 100px;
     gap: 20px;
   }
   .landing-menu a {
     font-size: 48px;
-    padding: 40px 20px;
+    /* remove horizontal padding to avoid horizontal scrollbars */
+    padding: 40px 0;
   }
 }
