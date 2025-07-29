@@ -128,7 +128,7 @@ nav.menu-nav {
      margin while retaining generous spacing between items. */
   .landing-menu {
     position: static;
-    margin-top: 100px;
+    margin-top: 200px;
     gap: 20px;
   }
   .landing-menu a {
