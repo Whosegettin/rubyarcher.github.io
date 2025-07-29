@@ -1,15 +1,18 @@
+/* Root variables for theme colours and spacing */
 :root {
   --bg: #ffffff;
   --text: #000000;
   --gutter: 20px;
 }
 
+/* Reset styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Shared container helper */
 .container {
   max-width: 1100px;
   margin: 0 auto;
@@ -33,7 +36,6 @@ header.site-header .logo {
   text-decoration: none;
   color: #000;
 }
-
 
 header.site-header h1 {
   grid-column: 2;
@@ -109,4 +111,17 @@ nav.menu-nav {
   text-decoration: none;
   display: block;
   margin: 10px 0;
+}
+
+/*
+ * Force a vertical scrollbar on all pages.  Without this rule the
+ * presence or absence of a scrollbar causes the layout to shift
+ * horizontally when navigating between pages with little content and
+ * those with lengthy content (such as the paintings grid).  By always
+ * reserving space for the scrollbar we avoid the subtle jump in the
+ * positioning of the site header and logo that was noticeable when
+ * clicking between links.
+ */
+html {
+  overflow-y: scroll;
 }
