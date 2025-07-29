@@ -1,44 +1,36 @@
-/* Reset and base styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/*
+ * Styles specific to the About page.
+ *
+ * This sheet builds upon the shared menu.css definitions so that the
+ * header, hamburger and off‑screen menu look identical across
+ * pages.  It defines a simple two‑column layout for the biography
+ * section with responsive stacking on small screens.  Colours and
+ * spacing are derived from CSS variables declared in menu.css.
+ */
 
+/* Ensure a consistent base style */
 body {
+  background: var(--bg);
+  color: var(--text);
   font-family: Helvetica, sans-serif;
-  background-color: #fff;
-  color: #000;
-}
-
-p {
-  margin-bottom: 20px;
   line-height: 1.6;
 }
 
-/* Main container */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 40px 20px;
-  padding-top: 120px; /* 👈 Pushes content down */
-}
-
-/* Bio section layout */
+/* Layout for the biography section */
 .bio-section {
   display: flex;
   justify-content: center;
   align-items: flex-start;
   gap: 40px;
   max-width: 900px;
-  margin: 200px auto 0; /* 👈 Further vertical spacing */
+  margin: 200px auto 0;
+  padding: 0 var(--gutter);
 }
 
-/* Bio text */
+/* Text column */
 .bio-text {
   flex: 1 1 60%;
   font-size: 1.1rem;
-  line-height: 1.6;
 }
 
 .bio-text h2 {
@@ -47,7 +39,7 @@ p {
   font-weight: bold;
 }
 
-/* Image */
+/* Image column */
 .bio-image {
   flex: 0 0 300px;
   max-width: 300px;
@@ -61,47 +53,14 @@ p {
   aspect-ratio: 1 / 1;
 }
 
-/* Responsive stacking on small screens */
+/* Stack columns on small screens */
 @media (max-width: 700px) {
   .bio-section {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    margin: 50px auto 0; /* 👈 Further vertical spacing */
+    margin: 50px auto 0;
   }
-
-  .bio-image {
-    margin-top: 20px;
-  }
-}
-.bio-text h2 {
-  font-size: 1.5rem;
-  margin-bottom: 20px;
-  font-weight: bold;
-}
-
-/* Image */
-.bio-image {
-  flex: 0 0 300px;
-  max-width: 300px;
-}
-
-.bio-image img {
-  width: 100%;
-  height: auto;
-  border: 2px solid #ccc;
-  object-fit: cover;
-  aspect-ratio: 1 / 1;
-}
-
-/* Responsive stacking on small screens */
-@media (max-width: 700px) {
-  .bio-section {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
   .bio-image {
     margin-top: 20px;
   }

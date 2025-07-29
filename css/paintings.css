@@ -83,9 +83,14 @@
     }
 
     .paint-item img {
-      width: 100%;
+      /* Allow images to scale based on calculated height.  The width
+         adjusts automatically to preserve the intrinsic aspect ratio.
+         Using object-fit: contain ensures the entire artwork is visible
+         without cropping, reflecting the painting’s actual orientation. */
+      width: auto;
+      max-width: 100%;
       height: auto;
-      object-fit: cover;
+      object-fit: contain;
       border: 2px solid #ccc;
     }
 
@@ -112,6 +117,29 @@
     .paint-item .price.sold {
       color: #888;
       font-style: italic;
+    }
+
+    /* ───── Lightbox overlay ──────────────────────────── */
+    /* The lightbox is hidden by default.  When active it
+       covers the entire viewport with a semi‑transparent background
+       and centers the enlarged artwork.  The overlay uses a high
+       z-index to sit above all other content. */
+    .lightbox {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: none;
+      justify-content: center;
+      align-items: center;
+      background: rgba(0, 0, 0, 0.9);
+      z-index: 2000;
+      padding: 40px;
+      box-sizing: border-box;
+    }
+    .lightbox.active {
+      display: flex;
     }
 
     @media (max-width: 600px) {

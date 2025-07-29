@@ -3,59 +3,46 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact - Ruby Archer</title>
-  <link rel="stylesheet" href="css/contact.css">
-  <link rel="stylesheet" href="css/menu.css">
+  <title>Contact – Ruby Archer</title>
+  <link rel="stylesheet" href="css/menu.css" />
+  <link rel="stylesheet" href="css/contact.css" />
 </head>
 <body>
+  <!-- Header / logo -->
+  <header class="site-header">
+    <a href="index.html" class="logo">Ruby Archer</a>
+    <h1>Contact</h1>
+  </header>
 
-    <!-- Header / logo -->
-<header class="site-header">
-  <a href="index.html" class="logo">Ruby Archer</a>
-   <h1>Contact</h1>
-</header>
+  <!-- Hamburger button -->
+  <nav class="menu-nav">
+    <div class="ham-menu" id="hamBtn" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
 
-<!-- Hamburger button -->
-<nav class="menu-nav">
-  <div class="ham-menu" id="hamBtn" aria-label="Toggle menu">
-    <span></span><span></span><span></span>
-  </div>
-</nav>
-  
-<!-- Side panel -->
-<aside class="off-screen-menu" id="sidePanel">
-  <ul>
-    <li><a href="https://instagram.com/rubyarcher" target="_blank">Instagram</a></li>
-    <li><a href="#">Other Portfolios</a></li>
-    <li><a href="#">Example</a></li>
-  </ul>
-</aside>
+  <!-- Side panel -->
+  <aside class="off-screen-menu" id="sidePanel">
+    <ul>
+      <li><a href="https://www.instagram.com/rubyarcherart/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+      <li><a href="#">Other Portfolios</a></li>
+      <li><a href="#">Example</a></li>
+    </ul>
+  </aside>
 
-  
-<!-- page Content -->
- <main class="contact-section">
-  <div class="contact-text">
-  <main>
-    <p>For enquires regarding purchase of artwork, or for artwork details please email regarding the title 
-     or titles of works and your relevant query.</p>
-
-    <p>For enquires about exhibitions or commissions please email outlining the nature of the request.</p>
-
+  <!-- Contact content -->
+  <main class="container contact-section">
+    <h2>Get in touch</h2>
+    <p>For enquiries regarding purchase of artwork or artwork details, please email with the title or titles of works and your relevant query.</p>
+    <p>For enquiries about exhibitions or commissions please email outlining the nature of the request.</p>
     <div class="contact-info">
       <p>Monday to Friday 11–6pm<br>Saturdays 12–4pm</p>
       <p>Ph. 0437 470 766<br>
          E-mail. <a href="mailto:rubyarcher03@gmail.com">rubyarcher03@gmail.com</a></p>
     </div>
   </main>
- <!-- JavaScript -->
-  <script>
-    const hamBtn = document.getElementById("hamBtn");
-    const sidePanel = document.getElementById("sidePanel");
 
-    hamBtn.addEventListener("click", () => {
-      hamBtn.classList.toggle("active");
-      sidePanel.classList.toggle("active");
-    });
-  </script>
+  <!-- Shared JavaScript -->
+  <script src="js/script.js"></script>
 </body>
 </html>

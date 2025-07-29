@@ -1,10 +1,12 @@
 /*
-  Styles for the Exhibitions page.
-  This sheet builds upon the shared menu.css definitions to maintain
-  consistency with the rest of the site.  It defines layouts for the
-  upcoming and past exhibition sections and the card presentation of
-  individual exhibitions.
-*/
+ * Styles for the Exhibitions page.
+ *
+ * This sheet builds upon the shared menu.css definitions to maintain
+ * consistency with the rest of the site.  It defines layouts for the
+ * upcoming and past exhibition sections and the card presentation of
+ * individual exhibitions.  Colours and spacing inherit from
+ * CSS variables declared in menu.css.
+ */
 
 body {
   background: var(--bg);
@@ -13,6 +15,7 @@ body {
   line-height: 1.5;
 }
 
+/* Header layout: positions logo on the left and title centered */
 header.site-header {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
@@ -35,8 +38,10 @@ header.site-header h1 {
   margin: 0;
 }
 
+/* Overall content wrapper */
 .exhibitions-content {
   margin-top: 40px;
+  padding: 0 var(--gutter);
 }
 
 /* Upcoming section */
@@ -101,5 +106,8 @@ header.site-header h1 {
   }
   .exhibition-card {
     min-height: auto;
+  }
+  header.site-header h1 {
+    font-size: 1.5rem;
   }
 }

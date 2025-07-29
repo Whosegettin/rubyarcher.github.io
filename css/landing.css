@@ -100,11 +100,11 @@ nav.menu-nav {
   display: flex;
   flex-direction: column;
   gap: 30px;
-  margin: 0;              /* ✅ removes top/side spacing */
-  padding: 0;             /* ✅ removes all internal padding */
-  position: absolute;     /* ✅ pins it */
-  top: 275px;             /* same vertical offset you wanted */
-  left: 0;                /* ✅ pins it to the left edge */
+  margin: 0;              /* removes top/side spacing */
+  padding: 0;             /* removes all internal padding */
+  position: absolute;     /* pins it */
+  top: 275px;             /* vertical offset */
+  left: 0;                /* pins it to the left edge */
 }
 
 .landing-menu a {
@@ -115,4 +115,3 @@ nav.menu-nav {
   padding: 55px;
   margin: 0;
 }
-
