@@ -1,9 +1,10 @@
 /*
- * This script provides several interactive behaviours across the
- * website.  It preserves the existing hamburger menu toggle and adds
- * functionality specific to the paintings page, including filtering
- * works by availability and adjusting image aspect ratios based on
- * dimensions listed in the captions.
+ * This script provides interactive behaviours across the website.  It
+ * preserves the existing hamburger menu toggle and adds functionality
+ * specific to the paintings page, including filtering works by
+ * availability and sizing thumbnails consistently.  The lightbox
+ * overlay code is also defined here to allow visitors to view larger
+ * versions of paintings.
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -59,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // single scaling constant is applied to the longest side to
   // maintain the relative scale of works.  Smaller pieces still
   // receive adequate space, while larger works occupy more of the
-  // available grid cell.  In addition, we set the `loading` and
+  // available row.  In addition, we set the `loading` and
   // `decoding` attributes to improve page performance.
   paintItems.forEach(item => {
     const sizeSpan = item.querySelector('.size');
@@ -78,12 +79,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // that images do not become excessively tall, improving the
     // browsing experience.  For wider screens a larger factor helps
     // convey relative scale between works.
-    const longest = Math.max(widthIn, heightIn);
-    // Use a larger scale on mobile devices so thumbnails are
-    // proportionally larger.  This improves legibility and reduces
-    // tiny images on small screens.
+    const longest   = Math.max(widthIn, heightIn);
     const pxPerInch = window.innerWidth <= 600 ? 12 : 15;
-    const majorPx = longest * pxPerInch;
+    const majorPx   = longest * pxPerInch;
     // Apply orientation: landscape paintings set the width, portrait
     // paintings set the height.  The other dimension remains auto to
     // preserve the intrinsic aspect ratio.
