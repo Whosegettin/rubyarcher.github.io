@@ -1,136 +1,138 @@
 /*
-      Styles specific to the paintings page.
+  Styles specific to the paintings page.
 
-      This file defines the layout of the list of artworks while
-      respecting the overall look and feel defined in menu.css.  The
-      variables declared in :root (see menu.css and landing.css) still
-      apply here, so colours and spacing remain consistent across pages.
-    */
+  This file defines the layout of the list of artworks while
+  respecting the overall look and feel defined in menu.css.  Variables
+  declared in :root (see menu.css and landing.css) still apply here,
+  so colours and spacing remain consistent across pages.
+*/
 
-    /* Ensure the body has the same basic styling as other pages */
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: Helvetica, sans-serif;
-      line-height: 1.4;
-    }
+/* Ensure the body has the same basic styling as other pages */
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: Helvetica, sans-serif;
+  line-height: 1.4;
+}
 
-    /* Position the header elements similarly to the about and landing pages */
-    header.site-header {
-      display: grid;
-      grid-template-columns: 1fr auto 1fr;
-      align-items: center;
-      padding: var(--gutter);
-      position: relative;
-    }
-    header.site-header .logo {
-      font-size: 1.8rem;
-      text-decoration: none;
-      color: var(--text);
-    }
-    header.site-header h1 {
-      grid-column: 2;
-      justify-self: center;
-      font-size: 2rem;
-      font-weight: bold;
-      margin: 0;
-    }
+/* Position the header elements similarly to the about and landing pages */
+header.site-header {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding: var(--gutter);
+  position: relative;
+}
+header.site-header .logo {
+  font-size: 1.8rem;
+  text-decoration: none;
+  color: var(--text);
+}
+header.site-header h1 {
+  grid-column: 2;
+  justify-self: center;
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0;
+}
 
-    /* Intro text and filter controls below the header */
-    .paints-info {
-      font-style: italic;
-      margin: 0 auto 40px;
-      max-width: 700px;
-      text-align: center;
-    }
+/* Intro text and filter controls below the header */
+.paints-info {
+  font-style: italic;
+  margin: 0 auto 40px;
+  max-width: 700px;
+  text-align: center;
+}
 
-    /* Styles for the filter buttons inside .paints-info.  These
-       buttons allow visitors to toggle between viewing all works and
-       only works that are available for sale.  The default browser
-       button styles are removed in favour of a simple link-like
-       appearance. */
-    .paints-info .filter-btn {
-      background: none;
-      border: none;
-      color: var(--text);
-      font-style: italic;
-      cursor: pointer;
-      text-decoration: underline;
-      margin: 0 4px;
-      padding: 0;
-      font-size: inherit;
-    }
+/* Styles for the filter buttons inside .paints-info.  These
+   buttons allow visitors to toggle between viewing all works and
+   only works that are available for sale.  The default browser
+   button styles are removed in favour of a simple link-like appearance. */
+.paints-info .filter-btn {
+  background: none;
+  border: none;
+  color: var(--text);
+  font-style: italic;
+  cursor: pointer;
+  text-decoration: underline;
+  margin: 0 4px;
+  padding: 0;
+  font-size: inherit;
+}
 
-    .paints-info .filter-btn.active {
-      font-weight: bold;
-      text-decoration: none;
-    }
+.paints-info .filter-btn.active {
+  font-weight: bold;
+  text-decoration: none;
+}
 
-    /* Grid layout for the paintings */
-    .paints-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: 40px 20px;
-      max-width: 1200px;
-      margin: 0 auto 60px;
-    }
+/* Grid layout for the paintings */
+/* Use a flexible layout for the paintings grid.  Flex allows each
+   figure to take the width of its content rather than forcing a
+   minimum column width, which eliminates the large empty spaces that
+   previously appeared around narrow images. */
+.paints-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto 60px;
+}
 
-    /* Each artwork is displayed as a figure with image and caption */
-    .paint-item {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-    }
+/* Each artwork is displayed as a figure with image and caption */
+.paint-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
 
-    .paint-item img {
-      /* Allow images to scale based on calculated dimensions.  The width
-         adjusts automatically to preserve the intrinsic aspect ratio.
-         Using object-fit: contain ensures the entire artwork is visible
-         without cropping, reflecting the painting’s actual orientation. */
-      width: auto;
-      max-width: 100%;
-      height: auto;
-      object-fit: contain;
-      border: 1px solid #aaa;
-      border-radius: 4px;
-    }
+.paint-item img {
+  /* Allow thumbnails to be sized by JavaScript based on their
+     dimensions.  We remove the border and ensure images behave like
+     block elements.  The max‑width rule prevents oversized images
+     from overflowing their container on very small screens. */
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  border: none;
+  border-radius: 0;
+  display: block;
+}
 
-    .paint-item figcaption {
-      margin-top: 8px;
-      font-size: 0.9rem;
-      line-height: 1.4;
-    }
+.paint-item figcaption {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
 
-    .paint-item figcaption .title {
-      font-weight: bold;
-      display: block;
-    }
+.paint-item figcaption .title {
+  font-weight: bold;
+  display: block;
+}
 
-    .paint-item figcaption span {
-      display: block;
-    }
+.paint-item figcaption span {
+  display: block;
+}
 
-    .paint-item .price {
-      margin-top: 6px;
-      font-weight: bold;
-    }
+.paint-item .price {
+  margin-top: 6px;
+  font-weight: bold;
+}
 
-    .paint-item .price.sold {
-      color: #888;
-      font-style: italic;
-    }
+.paint-item .price.sold {
+  color: #888;
+  font-style: italic;
+}
 
-
-    @media (max-width: 600px) {
-      /* Tighter spacing on small screens */
-      .paints-grid {
-        gap: 30px 15px;
-      }
-
-      header.site-header h1 {
-        font-size: 1.5rem;
-      }
-      .paint-item figcaption {
-        font-size: 0.85rem;
-      }
-    }
+@media (max-width: 600px) {
+  /* Tighter spacing on small screens */
+  .paints-grid {
+    gap: 30px 15px;
+  }
+  header.site-header h1 {
+    font-size: 1.5rem;
+  }
+  .paint-item figcaption {
+    font-size: 0.85rem;
+  }
+}

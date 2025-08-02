@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paintings • Ruby Archer</title>
+  <!-- Shared styles for the navigation and layout -->
+  <link rel="stylesheet" href="css/menu.css">
+  <!-- Page specific styles for the paintings grid -->
+  <link rel="stylesheet" href="css/paintings.css">
+</head>
+<body>
+  <!-- Site header containing logo and page title -->
+  <header class="site-header">
+    <a href="index.html" class="logo">Ruby Archer</a>
+    <h1>Paintings</h1>
+  </header>
+
+  <!-- Hamburger button to toggle the side panel -->
+  <nav class="menu-nav">
+    <div class="ham-menu" id="hamBtn" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- Off‑screen side panel for navigation links -->
+  <aside class="off-screen-menu" id="sidePanel">
+    <ul>
+      <li><a href="https://www.instagram.com/rubyarcherart/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+    </ul>
+  </aside>
+
+  <!-- Main content area -->
+  <main class="container">
+    <!-- Filter controls -->
+    <p class="paints-info">
+      <button id="filter-all" class="filter-btn active">All paintings</button>
+      |
+      <button id="filter-sale" class="filter-btn">Works for sale</button>
+    </p>
+
+    <!-- Grid of paintings -->
+    <div class="paints-grid">
+      <!-- Each artwork is marked up as a figure.  The inline sizing has been removed so
+           that CSS and JavaScript can control the dimensions uniformly. -->
+      <figure class="paint-item">
+        <img src="images/tea-szalon.jpg" alt="Tea Szalón painting">
+        <figcaption>
+          <span class="title">Tea Szalón</span>
+          <span class="year">2025</span>
+          <span class="size">11" × 25"</span>
+          <span class="medium">Oil on Cradle Board</span>
+          <span class="price sold">SOLD</span>
+        </figcaption>
+      </figure>
+
+      <figure class="paint-item">
+        <img src="images/bentwood-chair.JPG" alt="Bentwood Chair painting">
+        <figcaption>
+          <span class="title">Bentwood Chair</span>
+          <span class="year">2025</span>
+          <span class="size">16" × 19"</span>
+          <span class="medium">Oil on Cradle Board</span>
+          <span class="price">$325</span>
+        </figcaption>
+      </figure>
+
+      <figure class="paint-item">
+        <img src="images/stairwell.jpg" alt="Stairwell painting">
+        <figcaption>
+          <span class="title">Stairwell</span>
+          <span class="year">2025</span>
+          <span class="size">7" × 5"</span>
+          <span class="medium">Oil on Cradle Board</span>
+          <span class="price">SOLD</span>
+        </figcaption>
+      </figure>
+
+      <figure class="paint-item">
+        <img src="images/drive.jpg" alt="Drive painting">
+        <figcaption>
+          <span class="title">Drive</span>
+          <span class="year">2025</span>
+          <span class="size">8" × 10"</span>
+          <span class="medium">Oil on Cradle Board</span>
+          <span class="price">NFS</span>
+        </figcaption>
+      </figure>
+
+      <figure class="paint-item">
+        <img src="images/tobys-hand.jpg" alt="Toby's Hand painting">
+        <figcaption>
+          <span class="title">Toby's Hand</span>
+          <span class="year">2025</span>
+          <span class="size">5" × 7"</span>
+          <span class="medium">Oil on Cradle Board</span>
+          <span class="price">NFS</span>
+        </figcaption>
+      </figure>
+
+      <figure class="paint-item">
+        <img src="images/pigeon-blues.jpg" alt="Pigeon Blues painting">
+        <figcaption>
+          <span class="title">Pigeon Blues</span>
+          <span class="year">2025</span>
+          <span class="size">10" × 8"</span>
+          <span class="medium">Oil on Cradle Board</span>
+          <span class="price sold">SOLD</span>
+        </figcaption>
+      </figure>
+
+      <figure class="paint-item">
+        <img src="images/morning-light.jpg" alt="Morning Light painting">
+        <figcaption>
+          <span class="title">Morning Light</span>
+          <span class="year">2025</span>
+          <span class="size">19" × 23"</span>
+          <span class="medium">Oil on Cradle Board</span>
+          <span class="price">$345</span>
+        </figcaption>
+      </figure>
+
+      <figure class="paint-item">
+        <img src="images/lilies.jpg" alt="Lilies painting">
+        <figcaption>
+          <span class="title">Lilies</span>
+          <span class="year">2025</span>
+          <span class="size">7" × 8"</span>
+          <span class="medium">Oil on Cradle Board</span>
+          <span class="price sold">SOLD</span>
+        </figcaption>
+      </figure>
+    </div>
+  </main>
+
+  <!-- JavaScript to handle filtering, uniform sizing and lightbox -->
+  <script src="js/script.js"></script>
+  <!-- Lightbox container.  Initially empty; populated when an image is clicked. -->
+  <div id="lightbox" class="lightbox"><span class="lightbox-close" aria-label="Close">×</span></div>
+</body>
+</html>
